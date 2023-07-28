@@ -1,0 +1,169 @@
+@font-face {
+  font-family: Montserat;
+  src: url(./MontserratAlternates-ExtraLight.otf));
+}
+
+:root {
+  --font-family: Montserat,  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;;
+ 
+  --color-01: #FFFDEB;
+  --color-02: #FAEDCD;
+  --color-03: #CCD5AE;
+  --color-04: #788844;
+  --color-05: #545F30;
+  --color-06: #D02530;
+  --color-07: #9C1C24;
+  --color-08: #79151C;
+  --color-09: #66B7B4;
+  --color-10: #489996;
+  --color-fonts: #100A05;
+
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+*:focus {
+  border: none;
+  outline: none;
+}
+
+body,
+html {
+  font-family: var(--font-standard);
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+/* GRID - POSITION */
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 8vh 1fr 8vh;
+  justify-items: center;
+  height: 100vh;
+}
+
+header,
+footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 8vh;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+main {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.container-game {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.container-scoreboard,
+.container-scoreboard > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container-scoreboard > div {
+  justify-content: space-evenly;
+}
+
+.game-square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* COLORS */
+
+header,
+footer {
+  color: var(--color-fonts);
+  background-color: var(--color-01);
+  box-shadow: 0px 0px 5px 5px var(--shadow);
+}
+
+main {
+  color: var(--color-fonts);
+  background-color: var(--color-02);
+}
+
+.game-square {
+  background-color: var(--color-03);
+}
+
+/* CONFIGS */
+
+.container-scoreboard {
+  width: inherit;
+}
+
+.container-scoreboard,
+.scoreboard {
+  font-size: 20px;
+}
+
+.container-scoreboard > div > img {
+  width: 2rem;
+  height: auto;
+}
+
+.game-square {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 8px;
+}
+
+.game-square > img {
+  width: 4rem;
+  height: auto;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  background-color: var(--color-09);
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: var(--color-10);
+}
+
+button:active {
+  color: var(--color-02);
+  background-color: var(--color-09);
+}
