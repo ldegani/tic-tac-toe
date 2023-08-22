@@ -44,14 +44,14 @@ function GameController() {
   ];
   let p1Points = 0;
   let p2Points = 0;
-  let counter = 0;
+  let rounds = 0;
   let isOver = false;
   let activePlayer = players[0];
 
   const resetGame = () => {
     activePlayer = players[0];
     isOver = false;
-    counter = 0;
+    rounds = 0;
   }
 
   const switchPlayerTurn = () => {
@@ -71,7 +71,7 @@ function GameController() {
       isOver = true;
       return true;
     }
-    if (counter > 8) {
+    if (rounds > 8) {
       modal.style.display = 'block';
       resultMessage.textContent = 'Draw! ';
     }
@@ -79,7 +79,7 @@ function GameController() {
   }
 
   const playRound = () => {
-    counter++;
+    rounds++;
     if (checkWinner()) return true;
     switchPlayerTurn();
   }
